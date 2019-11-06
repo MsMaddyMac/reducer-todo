@@ -25,7 +25,6 @@ export default function TodoForm() {
 
     return (
         <>
-        <h1>hello</h1>
             <form onSubmit={handleSubmit}> 
                 <input
                     type="text"
