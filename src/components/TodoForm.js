@@ -23,6 +23,10 @@ export default function TodoForm() {
         dispatch({ type: "TOGGLE_COMPLETED_TODO", payload: id })
     }
 
+    const clearCompleted = () => {
+        dispatch({ type: "CLEAR_COMPLETED_TODO" })
+    }
+
     return (
         <>
             <form onSubmit={handleSubmit}> 
@@ -38,7 +42,8 @@ export default function TodoForm() {
             </form>
             <TodoList 
                 todo={state} 
-                toggleCompleted={toggleCompleted}  
+                toggleCompleted={toggleCompleted}
+                clearCompleted={clearCompleted}  
             />
         </>
     )
