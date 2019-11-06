@@ -1,6 +1,6 @@
 // initialState
 export const initialState = [{
-    name: 'Todo',
+    name: '',
     id: Date.now(),
     completed: false
 }];
@@ -11,7 +11,7 @@ export const reducer = (state, action) => {
             case "ADD_NEW_TODO":
                 return [ 
                     ...state, 
-                    action.payload
+                    action.payload                    
                 ];
             case "TOGGLE_COMPLETED_TODO":
                 return (

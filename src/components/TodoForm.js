@@ -14,7 +14,7 @@ export default function TodoForm() {
     const handleSubmit = e => {
         e.preventDefault();
         dispatch({ type: "ADD_NEW_TODO", 
-        payload: {name: newTodo, 
+        payload: {name: '', 
         completed: false,
         id: Date.now()} })
     }
@@ -27,6 +27,7 @@ export default function TodoForm() {
         dispatch({ type: "CLEAR_COMPLETED_TODO" })
     }
 
+    
     return (
         <>
             <form onSubmit={handleSubmit}> 
@@ -36,9 +37,8 @@ export default function TodoForm() {
                     id="item"
                     value={newTodo}
                     onChange={handleChanges}
-                    placeholder="Add Todo"
                 />
-                <button type="submit" >Add</button>
+                <button type="submit">Add</button>
             </form>
             <TodoList 
                 todo={state} 
