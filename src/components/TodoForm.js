@@ -18,6 +18,11 @@ export default function TodoForm() {
         completed: false,
         id: Date.now()} })
     }
+
+    const toggleCompleted = id => {
+        dispatch({ type: "TOGGLE_COMPLETED_TODO", payload: id })
+    }
+
     return (
         <>
         <h1>hello</h1>
@@ -32,7 +37,10 @@ export default function TodoForm() {
                 />
                 <button type="submit" >Add</button>
             </form>
-            <TodoList todo={state} />
+            <TodoList 
+                todo={state} 
+                toggleCompleted={toggleCompleted}  
+            />
         </>
     )
 }
